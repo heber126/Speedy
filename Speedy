@@ -1,0 +1,28 @@
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/miroeramaa/TurtleLib/main/TurtleUiLib.lua"))()
+
+local window = library:Window("Speedy | By heber")
+
+window:Button("Bring Gems/Orbs", function()
+    for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
+        if v.Name == "Outer" then
+            v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        end
+ end
+end)
+
+
+window:Toggle("Autofarm", false, function(t)
+if t then
+      _G.speed = true
+        while _G.speed == true do
+local Event = game:GetService("ReplicatedStorage").Shared.Network.Network.StepWalk
+Event:FireServer()
+wait(0.1)
+end
+    else
+        _G.speed = false
+    end
+end)
+
+
+https://web.roblox.com/games/4554189264/Heroes-of-Speed

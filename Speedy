@@ -17,7 +17,7 @@ if t then
         while _G.speed == true do
 local Event = game:GetService("ReplicatedStorage").Shared.Network.Network.StepWalk
 Event:FireServer()
-wait(0.1)
+wait(0)
 end
     else
         _G.speed = false
